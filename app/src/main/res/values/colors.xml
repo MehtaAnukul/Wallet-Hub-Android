@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3aa8b3</color>
+    <color name="colorPrimaryDark">#FF0C6370</color>
+    <color name="colorAccent">#3aa8b3</color>
+
+    <color name="colorlight">#0AAFC2</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhitelight">#f97d8f91</color>
+
+    <color name="colorActive">#d4d4d4</color>
+    <color name="colotStand">#0AAFC2</color>
+
+    <color name="colorrPrimaryDark">#292b3d</color>
+    <color name="colorGraylight">#fafafa</color>
+    <color name="colorStartBlue">#09c6df</color>
+    <color name="colorEndBlue">#0bcce6</color>
+</resources>

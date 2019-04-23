@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".activity.SignInActivity">
+
+        <LinearLayout
+            android:id="@+id/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/signIn" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@null" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_signUp_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_layout"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <EditText
+                android:id="@+id/activity_signIn_emailEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="15dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/activity_signIn_passwordEd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:drawableStart="@drawable/ic_vpn_key"
+                android:drawablePadding="15dp"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/activity_signIn_signInBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_signUp_linearLayout"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/bg"
+            android:text="@string/signIn"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/activity_signIn_doNotAccountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_signIn_signInBtn"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/doNotAccount" />
+
+        <TextView
+            android:id="@+id/activity_signIn_signUpTv"
+            style="@style/Hyperlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activity_signIn_signInBtn"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/activity_signIn_doNotAccountTv"
+            android:text="@string/signUp" />
+
+        <TextView
+            android:id="@+id/activity_signIn_forgotPasswordTv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/activity_signIn_signUpTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="@string/forgotpassword" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "796079244910",
+    "firebase_url": "https://wallethub-63faa.firebaseio.com",
+    "project_id": "wallethub-63faa",
+    "storage_bucket": "wallethub-63faa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796079244910:android:df06961d51b6c7e0",
+        "android_client_info": {
+          "package_name": "com.anukul.wallethub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796079244910-abuolch7hs571r6bk6fc3jcf21vmk733.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anukul.wallethub",
+            "certificate_hash": "d501e660b46abf1aba05db35c9181a8fc9b4b7c5"
+          }
+        },
+        {
+          "client_id": "796079244910-41g9vpt8sqtg5i2qq07a615jkn0ofd24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT9LnLswi2BOnK3F-KZEPyqVosawt7hpU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796079244910-41g9vpt8sqtg5i2qq07a615jkn0ofd24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
