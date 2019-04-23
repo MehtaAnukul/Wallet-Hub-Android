@@ -96,7 +96,7 @@ public class MusicViewActivity extends AppCompatActivity implements MusicOnItemC
 
     private void getAudioFromLabel() {
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_AUDIO)
                 .child(uuid).addValueEventListener(new ValueEventListener() {
@@ -155,7 +155,7 @@ public class MusicViewActivity extends AppCompatActivity implements MusicOnItemC
     private void getMusics() {
 
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_AUDIO)
                 .child(uuid).addValueEventListener(new ValueEventListener() {

@@ -10,8 +10,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/utusicon"/>
+        android:layout_marginTop="150dp"
+        android:src="@drawable/logo"/>
     <TextView
         android:id="@+id/activity_main_walletHubTv"
         android:layout_width="wrap_content"

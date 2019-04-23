@@ -322,7 +322,7 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         labelPushKey = labelModelArrayList.get(position).getPushKey();
-        Toast.makeText(this, "" + labelPushKey, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "" + labelPushKey, Toast.LENGTH_SHORT).show();
     }
 
     @Override

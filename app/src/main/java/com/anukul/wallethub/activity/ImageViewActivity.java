@@ -127,13 +127,14 @@ public class ImageViewActivity extends AppCompatActivity implements ImageOnItemC
     private void getImagesFromLabel() {
 
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_IMAGE)
                 .child(uuid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 imageModelArrayList.clear();
+
                 for (DataSnapshot imageModels : dataSnapshot.getChildren()) {
 
                     final ImageModel imageModel = imageModels.getValue(ImageModel.class);
@@ -179,7 +180,7 @@ public class ImageViewActivity extends AppCompatActivity implements ImageOnItemC
     private void getImages() {
 
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_IMAGE)
                 .child(uuid).addValueEventListener(new ValueEventListener() {

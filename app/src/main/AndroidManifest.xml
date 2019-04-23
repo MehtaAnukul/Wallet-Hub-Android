@@ -13,18 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.SignUpActivity"
             android:label="Sign Up" />
         <activity
             android:name=".activity.SignInActivity"
             android:label="Sign In">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.ProfileActivity"
@@ -136,7 +138,8 @@
                 android:value=".activity.HomeActivity" />
         </activity>
 
-        <activity android:name=".activity.ViewReportActivity"
+        <activity
+            android:name=".activity.ViewReportActivity"
             android:parentActivityName=".activity.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

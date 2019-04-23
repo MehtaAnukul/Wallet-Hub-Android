@@ -74,10 +74,10 @@ public class DocumentViewActivity extends AppCompatActivity implements DocumentO
 
         intent = getIntent();
 
-        if (intent.hasExtra(AppConstant.FIREBASE_NODE_IMAGE)) {
+        if (intent.hasExtra(AppConstant.FIREBASE_NODE_DOCUMENT)) {
 
+            labelPush = intent.getStringExtra(AppConstant.FIREBASE_NODE_DOCUMENT);
             getDocumentFromLabel();
-            labelPush = intent.getStringExtra(AppConstant.FIREBASE_NODE_IMAGE);
         } else {
             getDocument();
         }
@@ -97,7 +97,7 @@ public class DocumentViewActivity extends AppCompatActivity implements DocumentO
 
 
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_DOCUMENT)
                 .child(uuid).addValueEventListener(new ValueEventListener() {
@@ -106,7 +106,9 @@ public class DocumentViewActivity extends AppCompatActivity implements DocumentO
                 documentModelArrayList.clear();
                 for (DataSnapshot documentModels : dataSnapshot.getChildren()) {
 
-                    final DocumentModel documentModel = documentModels.getValue(DocumentModel.class);
+
+                        final DocumentModel documentModel = documentModels.getValue(DocumentModel.class);
+
 
                     databaseReference.child(AppConstant.FIREBASE_NODE_LABEL)
                             .child(uuid)
@@ -157,7 +159,7 @@ public class DocumentViewActivity extends AppCompatActivity implements DocumentO
     private void getDocument() {
 
         final String uuid = firebaseAuth.getCurrentUser().getUid();
-        Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "YES", Toast.LENGTH_SHORT).show();
         databaseReference
                 .child(AppConstant.FIREBASE_NODE_DOCUMENT)
                 .child(uuid).addValueEventListener(new ValueEventListener() {
@@ -234,7 +236,7 @@ public class DocumentViewActivity extends AppCompatActivity implements DocumentO
                 switch (item.getItemId()) {
                     case R.id.delete_popup:
 
-                        Toast.makeText(DocumentViewActivity.this, "" + documentModel.getPushKey(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(DocumentViewActivity.this, "" + documentModel.getPushKey(), Toast.LENGTH_SHORT).show();
 
                         databaseReference
                                 .child(AppConstant.FIREBASE_NODE_DOCUMENT)
