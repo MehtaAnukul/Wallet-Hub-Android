@@ -59,7 +59,7 @@ public class ViewReportActivity extends AppCompatActivity implements ViewReportO
         toolbar = findViewById(R.id.toolbar_layout_toolbar);
         toolbarTitleTv = toolbar.findViewById(R.id.toolbar_title);
         setSupportActionBar(toolbar);
-        toolbarTitleTv.setText("REPORT LIST");
+        toolbarTitleTv.setText("Report List");
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
