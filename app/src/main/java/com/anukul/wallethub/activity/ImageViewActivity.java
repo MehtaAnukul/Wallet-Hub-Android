@@ -43,7 +43,6 @@ public class ImageViewActivity extends AppCompatActivity implements ImageOnItemC
     private ImageViewAdapter imageViewAdapter;
     private FloatingActionButton floatingActionButton;
 
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
@@ -86,21 +85,16 @@ public class ImageViewActivity extends AppCompatActivity implements ImageOnItemC
                 startActivity(gotoImageUploadActivity);
             }
         });
+
         imageCustomRecyclerView = findViewById(R.id.activity_imageView_recyclerview);
-
-
         imageModelArrayList = new ArrayList<>();
-
-
         imageViewAdapter = new ImageViewAdapter(imageModelArrayList, this, ImageViewActivity.this);
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
         imageCustomRecyclerView.setLayoutManager(layoutManager);
         imageCustomRecyclerView.setAdapter(imageViewAdapter);
 
-
         if (intent.hasExtra(AppConstant.FIREBASE_NODE_IMAGE)) {
-
             getImagesFromLabel();
             labelPush = intent.getStringExtra(AppConstant.FIREBASE_NODE_IMAGE);
         } else {
