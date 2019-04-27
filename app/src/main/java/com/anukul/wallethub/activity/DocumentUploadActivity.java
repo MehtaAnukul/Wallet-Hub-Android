@@ -1,5 +1,6 @@
 package com.anukul.wallethub.activity;
 
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -65,6 +66,8 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
 
+    private ProgressDialog progressDialog;
+
     private ArrayList<String> labelStringArrayList;
     private ArrayList<LabelModel> labelModelArrayList;
     private ArrayAdapter<String> arrayAdapter;
@@ -86,6 +89,7 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
         labelStringArrayList = new ArrayList<>();
 
         documentModelArrayList = new ArrayList<>();
+        progressDialog = new ProgressDialog(DocumentUploadActivity.this);
 
         toolbar = findViewById(R.id.toolbar_layout_toolbar);
         toolbarTitleTv = toolbar.findViewById(R.id.toolbar_title);
@@ -152,14 +156,17 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
                 selectDocumentsProcess();
                 break;
             case R.id.activity_documentsUpload_uploadBtn:
+                progressDialog.setTitle("Document Upload");
+                progressDialog.setMessage("Document uploading....");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
                 uploadDocumentsProcess();
-                finish();
+               // finish();
                 break;
         }
     }
 
     private void uploadDocumentsProcess() {
-
         for (int i = 0; i < documentModelArrayList.size(); i++) {
             uploadAudioToStorage(i, documentModelArrayList.get(i));
         }
@@ -218,6 +225,7 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
                                     Toast.makeText(DocumentUploadActivity.this, "Error :" + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(DocumentUploadActivity.this, "Document Upload", Toast.LENGTH_SHORT).show();
+                                    finish();
                                 }
                             }
                         });
@@ -251,6 +259,8 @@ public class DocumentUploadActivity extends AppCompatActivity implements View.On
         if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK) {
             if (data.getClipData() != null) {
                 int totalItemsSelected = data.getClipData().getItemCount();
+
+                selectDocumentsBtn.setText("" + totalItemsSelected);
                 for (int i = 0; i < totalItemsSelected; i++) {
                     Uri fileUri = data.getClipData().getItemAt(i).getUri();
                     documentModelArrayList.add(getMetaData(fileUri));
